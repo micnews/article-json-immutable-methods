@@ -1,0 +1,17 @@
+{
+  "name": "article-json-immutable-methods",
+  "version": "0.0.0",
+  "description": "Immutable methods for article json",
+  "main": "index.js",
+  "scripts": {},
+  "author": "mic.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micnews/article-json-immutable-methods.git"
+  },
+  "bugs": {
+    "url": "https://github.com/micnews/article-json-immutable-methods/issues"
+  },
+  "homepage": "https://github.com/micnews/article-json-immutable-methods#readme"
+}
