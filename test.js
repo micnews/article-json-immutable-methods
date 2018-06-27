@@ -6,10 +6,19 @@ import {mergeDeep} from 'immutable-object-methods';
 test('mapText()', t => {
   const input = [{
     type: 'paragraph',
-    children: [
-      {content: 'foo bar', type: 'text'},
-      {type: 'embed', embedType: 'image', imageSrc: 'http://image-source.jpg'}
-  ]
+    children: [{content: 'foo bar', type: 'text'}]
+  }, {
+    type: 'embed', 
+    embedType: 'image', 
+    imageSrc: 'http://image-source.jpg',
+    attribution: [{
+      content: 'attribution',
+      type: 'text',
+    }],
+    caption: [{
+      content: 'caption',
+      type: 'text',
+    }]
   }];
   const actual = mapText(input, (child) => {
     return mergeDeep(child, {bold: true});
@@ -18,8 +27,21 @@ test('mapText()', t => {
     type: 'paragraph',
     children: [
       {content: 'foo bar', type: 'text', bold: true},
-      {type: 'embed', embedType: 'image', imageSrc: 'http://image-source.jpg'}
     ]
+  }, {
+    type: 'embed', 
+    embedType: 'image', 
+    imageSrc: 'http://image-source.jpg',
+    attribution: [{
+      content: 'attribution',
+      type: 'text',
+      bold: true
+    }],
+    caption: [{
+      content: 'caption',
+      type: 'text',
+      bold: true
+    }]
   }];
   t.deepEqual(actual, expected);
   t.is(actual[0].children[1], input[0].children[1]);
