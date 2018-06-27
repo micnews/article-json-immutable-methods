@@ -1,6 +1,6 @@
 {
   "name": "article-json-immutable-methods",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Immutable methods for article json",
   "main": "dist/index.js",
   "scripts": {
