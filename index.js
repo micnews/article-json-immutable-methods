@@ -17,6 +17,14 @@ const map = (array, fn) => {
       obj = set(obj, 'children', map(obj.children, fn));
     }
 
+    if (obj.caption) {
+      obj = set(obj, 'caption', map(obj.caption, fn));
+    }
+
+    if (obj.attribution) {
+      obj = set(obj, 'attribution', map(obj.attribution, fn));
+    }
+
     return fn(obj);
   });
 };
